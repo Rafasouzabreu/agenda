@@ -1,6 +1,7 @@
 package br.com.cotiinformatica.domain.dtos;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
@@ -16,7 +17,7 @@ public class CriarPessoaRequestDto {
 	
 	@Pattern(regexp = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,20}$",
 			message = "Por favor, informe a senha com letras maiúsculas, minúsculas, números, símbolos e pelo menos 8 caracteres.")
-	@NotEmpty(message = "Por favor, informe a senha da pessoa.")
+	@NotNull(message = "Por favor, informe a senha da pessoa.")
 	private String senha;
 }
 
